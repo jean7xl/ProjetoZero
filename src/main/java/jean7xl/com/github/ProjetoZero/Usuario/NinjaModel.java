@@ -1,8 +1,15 @@
 package jean7xl.com.github.ProjetoZero.Usuario;
 import jakarta.persistence.*;
 import jean7xl.com.github.ProjetoZero.Nivel.NivelModel;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
 import java.util.List;
 
+@NoArgsConstructor
+@AllArgsConstructor
+@Data
 @Entity
 @Table(name = "tb_cadastro")
 public class NinjaModel {
@@ -10,8 +17,11 @@ public class NinjaModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     private String nome;
+
     private String email;
+
     private int idade;
 
     //
@@ -19,41 +29,6 @@ public class NinjaModel {
     @JoinColumn(name = "nivel_id")
     private NivelModel nivelModel;
     //
-
-    private List<NivelModel> nivel;
-
-    public NinjaModel() {
-    }
-
-        public NinjaModel(String nome, String email, int idade) {
-        this.nome = nome;
-        this.email = email;
-        this.idade = idade;
-    }
-
-        public int getIdade() {
-        return idade;
-    }
-
-        public void setIdade(int idade) {
-        this.idade = idade;
-    }
-
-        public String getEmail() {
-        return email;
-    }
-
-        public void setEmail(String email) {
-        this.email = email;
-    }
-
-        public String getNome() {
-        return nome;
-    }
-
-        public void setNome(String nome) {
-        this.nome = nome;
-    }
 }
 
 
