@@ -1,4 +1,4 @@
-package jean7xl.com.github.ProjetoZero;
+package jean7xl.com.github.ProjetoZero.Usuario;
 
 
 import org.springframework.web.bind.annotation.GetMapping;
