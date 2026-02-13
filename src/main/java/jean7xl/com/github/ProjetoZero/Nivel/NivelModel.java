@@ -22,7 +22,7 @@ public class NivelModel {
 
     private String descricao;
 
-        @OneToMany(mappedBy = "nivel")
+        @OneToMany(mappedBy = "nivelModel")
         private List<NinjaModel> ninjas;
 
 }

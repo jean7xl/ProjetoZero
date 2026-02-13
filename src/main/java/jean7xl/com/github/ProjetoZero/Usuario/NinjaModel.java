@@ -29,8 +29,7 @@ public class NinjaModel {
 
     @Column(name = "idade")
     private int idade;
-
-    //
+    
     @ManyToOne
     @JoinColumn(name = "nivel_id")
     private NivelModel nivelModel;
