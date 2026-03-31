@@ -3,9 +3,17 @@ package jean7xl.com.github.ProjetoZero.Usuario;
 
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
-@RequestMapping
+@RequestMapping("/ninjas")
 public class NinjaController {
+
+    private UsuarioService usuarioService;
+    public NinjaController(UsuarioService usuarioService) {
+        this.usuarioService = usuarioService;
+    }
+
 
     @GetMapping("/boasvindas")
     public String boasVindas() {
@@ -18,13 +26,13 @@ public class NinjaController {
     }
 
     @GetMapping("/todos")
-    public String todos() {
-        return "Todos";
+    public List<NinjaModel> todos() {
+        return usuarioService.listarNinjas() ;
     }
 
-    @GetMapping("/todosID")
-    public String todosID() {
-        return "TodosID";
+    @GetMapping("/listar/{id}")
+    public NinjaModel listarID( @PathVariable Long id) {
+        return usuarioService.listarPorId(id);
     }
 
    @PutMapping("/alterarporID")

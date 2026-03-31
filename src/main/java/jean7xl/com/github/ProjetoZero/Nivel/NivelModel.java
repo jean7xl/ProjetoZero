@@ -1,4 +1,5 @@
 package jean7xl.com.github.ProjetoZero.Nivel;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import jean7xl.com.github.ProjetoZero.Usuario.NinjaModel;
 import lombok.AllArgsConstructor;
@@ -23,6 +24,7 @@ public class NivelModel {
     private String descricao;
 
         @OneToMany(mappedBy = "nivelModel")
+        @JsonIgnore
         private List<NinjaModel> ninjas;
 
 }
