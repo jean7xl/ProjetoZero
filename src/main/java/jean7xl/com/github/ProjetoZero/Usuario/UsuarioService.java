@@ -27,6 +27,14 @@ public class UsuarioService {
         ninjaRepository.deleteById(id);
     }
 
+    public NinjaModel atualizarNinja(NinjaModel ninjaAtualizado, Long id) {
+       if (ninjaRepository.existsById(id)){
+           ninjaAtualizado.setId(id);
+        return  ninjaRepository.save(ninjaAtualizado);
+       }
+       return null;
+    }
+
 
 
 }
