@@ -23,6 +23,10 @@ public class UsuarioService {
     public NinjaModel criarNinja(NinjaModel ninjaModel) {
         return ninjaRepository.save(ninjaModel);
     }
+    public void deletarNinjaPorId(Long id) {
+        ninjaRepository.deleteById(id);
+    }
+
 
 
 }
