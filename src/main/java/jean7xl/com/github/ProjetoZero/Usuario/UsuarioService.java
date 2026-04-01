@@ -20,6 +20,9 @@ public class UsuarioService {
         Optional<NinjaModel>ninjaPorId = ninjaRepository.findById(id);
         return ninjaPorId.orElse(null);
     }
+    public NinjaModel criarNinja(NinjaModel ninjaModel) {
+        return ninjaRepository.save(ninjaModel);
+    }
 
 
 }
