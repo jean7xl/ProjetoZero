@@ -34,6 +34,11 @@ public class NinjaModel {
     @JoinColumn(name = "nivel_id")
     private NivelModel nivelModel;
     //
+
+    @Column(name = "rank")
+    private String rank;
+
+
 }
 
 
